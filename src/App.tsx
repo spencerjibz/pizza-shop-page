@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Toolbar, Paper, Container, Box, Typography} from '@mui/material';
+import { Toolbar, Paper, Container, Box, Typography } from '@mui/material';
 import NavTab from './components/NavTab';
 import ImageBanner from './components/ImageBanner';
 import { StoreInfo, StoreTimes } from './components/shopInfoSection';
@@ -59,15 +59,13 @@ function App() {
         setCart(previousStoreState);
 
         // set past orders
-      
     }, []);
-    const showHistory = async () => { 
+    const showHistory = async () => {
         const pastOrders = await GetPastOrders();
         const map = new Map(Object.entries(pastOrders));
         setPastOrders(map);
         setShowPastOrders(true);
     };
-
 
     const addToCart = (order: Order) => {
         const orderStr = JSON.stringify(order);
@@ -89,10 +87,9 @@ function App() {
                 addItem(hash, same);
 
                 return;
-            } else {
-                addSimilarOrder(order, olderOrder);
-                return;
             }
+            addSimilarOrder(order, olderOrder);
+            return;
         }
         setCart(new Map([...cart, [hash, order]]));
         browserStorage.addOrder(hash, order);
@@ -140,16 +137,15 @@ function App() {
                 const count = editOrder.count + 1;
                 console.log(editOrder.count);
                 setEditOrder({ editMode: true, order: order, count });
-            } else {
-                setEditOrder({ editMode: true, order: order, count: 1 });
+                return;
             }
+            setEditOrder({ editMode: true, order: order, count: 1 });
         }
     };
 
     const handleCheckout = async () => {
         try {
             const order = await PostOrder(cart);
-            console.log(order);
             const orderNumber = order.orderNumber;
             const completedOrder: Map<string, Order> = new Map(
                 Object.entries(order.completedOrder[orderNumber]),
