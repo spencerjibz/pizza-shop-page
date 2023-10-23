@@ -1,4 +1,4 @@
-import BannerImage from '../assets/banner-photox1200.jpg';
+import BannerImage from '../../assets/banner-photox1200.jpg';
 import { CardActionArea, CardMedia, Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
 const StyledCardMedia = styled(CardMedia)(() => ({

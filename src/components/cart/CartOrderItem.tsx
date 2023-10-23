@@ -9,7 +9,7 @@ import {
     Toolbar,
     Box,
 } from '@mui/material';
-import { Order } from '../../shared/common';
+import { Order } from '../../../shared/common';
 import { ExpandMore, DeleteForever, Edit } from '@mui/icons-material';
 
 interface CartOrderSummaryProps {
@@ -33,7 +33,7 @@ function CartOrderSummary({ basket, deleteFromCart, editCart }: CartOrderSummary
                     ToppingsLen > 2 ? order.extra.slice(0, 3) : order.extra.slice(0, 2);
 
                 const remainningToppings = order.extra.slice(3, ToppingsLen);
-                console.log(remainingIngredients,mainIngredients)
+                console.log(remainingIngredients, mainIngredients);
 
                 return (
                     <MenuItem key={id}>

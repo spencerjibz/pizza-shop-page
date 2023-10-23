@@ -30,9 +30,9 @@ import {
     CostPerExtraTopping,
     Topping,
     Order,
-} from '../../shared/common';
+} from '../../../shared/common';
 import ToppingsMenu from './extraOptions';
-import { Item } from '../../shared/util';
+import { Item } from '../../../shared/util';
 
 interface OrderModelProps {
     item: PizzaType;
@@ -55,13 +55,13 @@ function OrderModel({
     const [toppings, setToppings] = useState<Topping[]>([]);
     const [includedToppings, setIncludedToppings] = useState<string[]>([]);
     const [defaultSize, setDefaultSize] = useState<string | undefined>();
- 
+
     useEffect(() => {
         const data = Object.entries(CostPerSize).map(
             ([key, value]) => `${key} ${value.inches}" ${value.price}`,
         );
         setSizes(data);
-         const TopTwotoppings = item.ingredients.slice(0, 2);
+        const TopTwotoppings = item.ingredients.slice(0, 2);
         const defaultOrder = passedOrder
             ? passedOrder
             : ({
@@ -97,9 +97,11 @@ function OrderModel({
 
         if (order) {
             const total = (price + addToppings(toppings)) * order?.quantity;
-          
-           const TopTwotoppings = item.ingredients.slice(0, 2);
-            if (TopTwotoppings.length < 2) { TopTwotoppings.push('Spinach') }
+
+            const TopTwotoppings = item.ingredients.slice(0, 2);
+            if (TopTwotoppings.length < 2) {
+                TopTwotoppings.push('Spinach');
+            }
             switch (size) {
                 case 'Medium': {
                     let extraIngredients = TopTwotoppings.concat('Sweetcorn');

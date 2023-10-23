@@ -7,8 +7,8 @@ import {
     Checkbox,
 } from '@mui/material';
 
-import { Item } from '../../shared/util';
-import { Topping } from '../../shared/common';
+import { Item } from '../../../shared/util';
+import { Topping } from '../../../shared/common';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 interface ToppingMenuProps {
     toppings: Topping[];

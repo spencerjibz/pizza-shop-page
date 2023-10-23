@@ -1,14 +1,14 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Toolbar, Paper, Container, Box, Typography } from '@mui/material';
-import NavTab from './components/NavTab';
-import ImageBanner from './components/ImageBanner';
-import { StoreInfo, StoreTimes } from './components/shopInfoSection';
-import MainMenu from './components/Menu';
+import NavTab from './components/Navbars/NavTab';
+import ImageBanner from './components/Navbars/ImageBanner';
+import { StoreInfo, StoreTimes } from './components/Navbars/shopInfoSection';
+import MainMenu from './components/cart/Menu';
 import { EditOrder, Order, OrderRecord } from '../shared/common';
 import { createHash, compareOrdersMinusTotalandQuantity } from '../shared/util';
 import { browserStorage } from '../shared/BrowerStorage';
-import OrderSummary from './components/CheckOut';
+import OrderSummary from './components/CheckOutPage';
 import OrderHistory from './components/OrderHistory';
 
 const apiUrl = 'http://localhost:8000/api';

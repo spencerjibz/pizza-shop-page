@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { ExpandMore, ArrowBackIosNew } from '@mui/icons-material';
 import { Order } from '../../shared/common';
-import OrderSummary from './CheckOut';
+import OrderSummary from './CheckOutPage';
 interface OrderHistoryProps {
     pastOrders: Map<string, Record<string, Order>>;
     returnToMenu: () => void;

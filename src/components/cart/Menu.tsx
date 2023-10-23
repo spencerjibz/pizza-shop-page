@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Stack } from '@mui/material';
 
-import { Pizzas, PizzaType } from '../../shared/common.ts';
+import { Pizzas, PizzaType } from '../../../shared/common.ts';
 import { useState, useEffect } from 'react';
 import MenuItemCard from './MenuItemCard.tsx';
 
-import { Order, EditOrder } from '../../shared/common.ts';
+import { Order, EditOrder } from '../../../shared/common.ts';
 
 interface MainMenuProps {
     addToCart: (order: Order) => void;

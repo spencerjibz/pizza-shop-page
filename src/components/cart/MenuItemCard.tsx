@@ -1,8 +1,8 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { Item } from '../../shared/util';
+import { Item } from '../../../shared/util';
 
-import { Order, PizzaType } from '../../shared/common';
-import OrderModel from './OrderModel';
+import { Order, PizzaType } from '../../../shared/common';
+import OrderModel from '../OrderEditModal/OrderModel';
 
 interface MenuItemCardProps {
     item: PizzaType;
