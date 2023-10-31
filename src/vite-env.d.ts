@@ -2,6 +2,6 @@
 
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string;
-    readonly PORT: string;
+    readonly MODE: string;
     // more env variables...
 }
