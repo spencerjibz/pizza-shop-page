@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import { OrderRecord } from '../shared/common.ts';
+import { OrderRecord, PORT } from '../shared/common.ts';
 import fs from 'fs';
 import { fileStorage } from '../shared/FileStorage.ts';
 
-const PORT = 8000;
+const port = PORT || 8000;
 const app = express();
 // middleware setup
 app.use(cors());
@@ -41,4 +41,4 @@ app.get('/api/orders', (_, res) => {
     res.json(orders);
 });
 
-app.listen(PORT, () => console.log('Server running on port', PORT));
+app.listen(port, () => console.log('Server running on port', port));

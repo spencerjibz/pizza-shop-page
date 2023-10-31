@@ -8,6 +8,9 @@ export type PizzaType = {
     KCal: number;
 };
 
+export const PORT = process.env.PORT || 8000;
+export const apiUrl = `http://localhost:${PORT}/api`;
+
 const Pizzas: PizzaType[] = [
     {
         name: 'Margherita',
@@ -124,7 +127,7 @@ const extraToppings: string[] = [
     'Spinach',
     'Sweetcorn',
     'Tomatoes',
-] ;
+];
 
 export interface Topping {
     selected: boolean;

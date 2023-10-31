@@ -5,13 +5,13 @@ import NavTab from './components/Navbars/NavTab';
 import ImageBanner from './components/Navbars/ImageBanner';
 import { StoreInfo, StoreTimes } from './components/Navbars/shopInfoSection';
 import MainMenu from './components/cart/Menu';
-import { EditOrder, Order, OrderRecord } from '../shared/common';
+import { EditOrder, Order, OrderRecord,apiUrl } from '../shared/common';
 import { createHash, compareOrdersMinusTotalandQuantity } from '../shared/util';
 import { browserStorage } from '../shared/BrowerStorage';
 import OrderSummary from './components/CheckOutPage';
 import OrderHistory from './components/OrderHistory';
 
-const apiUrl = 'http://localhost:8000/api';
+
 
 interface PostOrderResponse {
     orderNumber: string;
