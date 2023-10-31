@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { OrderRecord } from '../shared/common.ts';
-
+import fs from 'fs';
 import { fileStorage } from '../shared/FileStorage.ts';
 
 const PORT = 8000;
@@ -10,7 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-if (process.env.NODE_ENV === 'production') {
+
+// check for a build
+const buildPath = process.cwd() + '/dist';
+if (fs.existsSync(buildPath)) {
     app.use(express.static('dist'));
 
     app.get('/', (req, res) => {
@@ -18,7 +21,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile('index.html', { root: 'dist' });
     });
 }
-
 app.post('/api/order', (req, res) => {
     let { order } = req.body;
 
