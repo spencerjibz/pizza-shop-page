@@ -12,7 +12,7 @@
         "dev": "concurrently -n client,server \"npm run start:client\" \"npm run start:server\"",
         "preview": "vite preview",
         "start": "ts-node --esm \"./server/app.ts\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build "
+        "postinstall": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build "
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
