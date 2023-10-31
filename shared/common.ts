@@ -124,7 +124,7 @@ const extraToppings: string[] = [
     'Spinach',
     'Sweetcorn',
     'Tomatoes',
-] as const;
+] ;
 
 export interface Topping {
     selected: boolean;
