@@ -2,7 +2,6 @@
 
 This is a simple pizza shopping page built with React,Material UI, Typescript and Node.js.
 ## Task 
-## Your task
 Create the order page for Pluto’s Pizza Shop! Here’s the price list:
 
 - Small pizza (incl. 2 toppings): £6.99
