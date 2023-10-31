@@ -9,8 +9,10 @@
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "start:server": "nodemon -e ts -w ./ -x npm run server:dev",
         "server:dev": "ts-node --esm ./server/app.ts",
-        "start": "concurrently -n client,server \"npm run start:client\" \"npm run start:server\"",
-        "preview": "vite preview"
+        "dev": "concurrently -n client,server \"npm run start:client\" \"npm run start:server\"",
+        "preview": "vite preview",
+        "install": "ts-node --esm ./server/app.ts",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build "
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
