@@ -10,6 +10,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('dist'));
+
+    app.get('/', (req, res) => {
+        res.sendFile('index.html', { root: 'dist' });
+    });
+}
 
 app.post('/api/order', (req, res) => {
     let { order } = req.body;
