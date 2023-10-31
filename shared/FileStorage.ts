@@ -17,7 +17,7 @@ class FileStorage implements Storage {
             console.log('Error reading file', e);
         }
     }
-    
+
     getOrders(): Record<string, OrderRecord> {
         return this.backingStore || {};
     }
@@ -26,14 +26,12 @@ class FileStorage implements Storage {
             this.backingStore[key] = order;
             this.save();
         }
-      
     }
     removeOrder(key: string): void {
         if (this.backingStore && !this.exists(key)) {
             delete this.backingStore[key];
             this.save();
         } else {
-
             throw new Error('Order not found');
         }
     }

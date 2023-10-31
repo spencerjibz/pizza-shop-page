@@ -348,5 +348,3 @@ function OrderModel({
 }
 
 export default OrderModel;
-
-
